@@ -1,0 +1,33 @@
+# Laravel / PHP
+/vendor/
+/node_modules/
+
+# Environment
+.env
+.env.* 
+!.env.example
+
+# IDE / editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Laravel generated files
+/public/storage
+/storage/*.key
+
+# Testing / coverage
+.phpunit.result.cache
+.phpunit.cache/
+coverage/
+
+# Local tooling
+.php-cs-fixer.cache
