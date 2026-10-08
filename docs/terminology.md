@@ -1,4 +1,4 @@
-# storykobo terminology
+# storykōbō terminology
 
 This document defines the working meaning of major platform concepts so that different systems do not accidentally become the same thing under different names.
 
@@ -93,7 +93,7 @@ Events may contain teams, goals, achievements, and activity.
 
 ## Forum
 
-The discussion component of storykobo.
+The discussion component of storykōbō.
 
 The forum is a native part of the platform rather than a separate identity system.
 
