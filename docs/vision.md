@@ -1,14 +1,14 @@
-# storykobo vision
+# storykōbō vision
 
-## What is storykobo?
+## What is storykōbō?
 
-storykobo is a creative community platform designed around the idea of an online third place: somewhere people can come to make things, work quietly, discover other people's work, exchange ideas, and participate in community without everything becoming a popularity contest.
+storykōbō is a creative community platform designed around the idea of an online third place: somewhere people can come to make things, work quietly, discover other people's work, exchange ideas, and participate in community without everything becoming a popularity contest.
 
 The platform is intended to bring together pieces that have historically been scattered across forums, social platforms, event sites, writing communities, chat servers, and personal project pages.
 
 ## Who is it for?
 
-storykobo is intended for adults **18 and older** who want a place to participate in creative communities.
+storykōbō is intended for adults **18 and older** who want a place to participate in creative communities.
 
 Writing is an important starting point, but the platform should be able to accommodate many forms of creative work, including:
 
@@ -40,7 +40,7 @@ This is a conceptual model rather than a requirement that the interface literall
 
 ## Community philosophy
 
-storykobo should encourage participation without turning participation into a competition.
+storykōbō should encourage participation without turning participation into a competition.
 
 That means avoiding systems whose primary purpose is:
 
