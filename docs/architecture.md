@@ -1,4 +1,4 @@
-# storykobo architecture
+# storykōbō architecture
 
 ## Current direction
 
@@ -13,7 +13,7 @@ This is a direction, not a promise that every future component must use the same
 
 ## Core architectural principle
 
-**storykobo owns the community identity.**
+**storykōbō owns the community identity.**
 
 The forum, Discord, events, projects, and integrations are components around that identity.
 
