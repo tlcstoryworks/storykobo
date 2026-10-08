@@ -1,8 +1,8 @@
-# storykobo community model
+# storykōbō community model
 
 ## Membership
 
-storykobo is intended to be an **18+ community**.
+storykōbō is intended to be an **18+ community**.
 
 The platform should be designed around adult community participation from the beginning rather than attempting to retrofit an adult-only environment onto a general-audience system.
 
