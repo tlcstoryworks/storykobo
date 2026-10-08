@@ -1,4 +1,4 @@
-# storykobo roadmap
+# storykōbō roadmap
 
 This roadmap is intentionally broad. Detailed implementation tasks should be created only when the relevant phase is ready.
 
