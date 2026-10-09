@@ -2,16 +2,26 @@
 /vendor/
 /node_modules/
 
-# Environment
+# Environment and secrets
 .env
-.env.* 
+.env.*
 !.env.example
+/auth.json
+
+# Local databases
+/database/*.sqlite
+/database/*.sqlite-*
 
 # IDE / editors
 .idea/
 .vscode/
+.nova/
+.zed/
 *.swp
 *.swo
+.phpactor.json
+.php-cs-fixer.cache
+_ide_helper.php
 
 # OS
 .DS_Store
@@ -22,7 +32,11 @@ Thumbs.db
 
 # Laravel generated files
 /public/storage
+/public/build
+/public/hot
+/public/fonts-manifest.dev.json
 /storage/*.key
+/storage/pail
 
 # Testing / coverage
 .phpunit.result.cache
@@ -30,4 +44,7 @@ Thumbs.db
 coverage/
 
 # Local tooling
-.php-cs-fixer.cache
+/.codex/
+/.cursor/
+Homestead.json
+Homestead.yaml
