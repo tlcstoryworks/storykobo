@@ -5,11 +5,11 @@ This roadmap is intentionally broad. Detailed implementation tasks should be cre
 ## Phase 0 — Foundation
 
 - [x] Create GitHub repository
-- [ ] Establish project documentation
-- [ ] Establish terminology
-- [ ] Document architecture principles
-- [ ] Establish initial Laravel application
-- [ ] Establish local development environment
+- [x] Establish project documentation
+- [x] Establish terminology
+- [x] Document architecture principles
+- [x] Establish initial Laravel application
+- [x] Establish local development environment
 
 ## Phase 1 — Identity
 
@@ -17,11 +17,13 @@ This roadmap is intentionally broad. Detailed implementation tasks should be cre
 - [ ] Login/logout
 - [ ] Permanent numeric user IDs
 - [ ] Username claiming
-- [ ] Username validation and uniqueness
+- [x] Username validation and uniqueness
 - [ ] Public profile URLs
 - [ ] Basic profile
 - [ ] Account settings
 - [ ] Privacy foundations
+
+**Implementation note:** Username normalization, format validation, availability checking, and database uniqueness are implemented and tested. The remaining identity workflow—including registration, claiming, and profile URLs—has not yet been connected.
 
 ## Phase 2 — Community foundation
 
