@@ -21,6 +21,19 @@ The first goal is not to build every feature at once. We are establishing a clea
 - Portable infrastructure: the application should not depend unnecessarily on one hosting provider.
 - Accessibility and customization: the interface should support different needs and preferences rather than assuming one aesthetic works for everyone.
 
+## Public site
+
+The GitHub Pages landing page and visitor-facing project pages are available at:
+
+- [Home](https://tlcstoryworks.github.io/storykobo/)
+- [About](https://tlcstoryworks.github.io/storykobo/about/)
+- [Vision](https://tlcstoryworks.github.io/storykobo/vision/)
+- [Roadmap](https://tlcstoryworks.github.io/storykobo/roadmap/)
+- [Community](https://tlcstoryworks.github.io/storykobo/community/)
+- [Development updates](https://tlcstoryworks.github.io/storykobo/updates/)
+
+These static HTML pages are the public presentation layer. The Markdown files in `docs/` remain the working source documentation.
+
 ## Documentation
 
 - [Vision](docs/vision.md)
