@@ -226,3 +226,18 @@ p { max-width: var(--reading-width); }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
+
+/* 11. PROJECT STATUS AND POLICY LIBRARY */
+.site-notice { padding: .7rem 0; border-bottom: 1px solid var(--color-border); background: var(--color-sage); color: var(--color-ink); font-size: .9rem; line-height: 1.5; }
+.site-notice a { font-weight: 700; }
+.policy-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-block: 2rem; }
+.policy-card { padding: 1.35rem; border: 1px solid var(--color-border); border-radius: var(--radius-card); background: var(--color-white); }
+.policy-card h2 { margin-bottom: .65rem; font-size: 1.4rem; }
+.policy-card h2 a { color: var(--color-green); }
+.policy-card p:last-child { margin-bottom: 0; font-size: .94rem; }
+.policy-meta { margin-block: .25rem; color: var(--color-muted); font-size: .92rem; }
+.policy-switch { margin-top: 1.25rem; font-size: .98rem; }
+.policy-content h2 { margin-top: 2rem; }
+.policy-content blockquote { margin: 1.5rem 0; padding: 1rem 1.25rem; border-left: 4px solid var(--color-leather); background: rgb(228 210 181 / 42%); }
+.policy-return { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--color-border); }
+@media (max-width: 600px) { .policy-grid { grid-template-columns: 1fr; } }
