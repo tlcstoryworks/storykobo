@@ -31,7 +31,7 @@ The GitHub Pages landing page and visitor-facing project pages are available at:
 - [Roadmap](https://tlcstoryworks.github.io/storykobo/roadmap/)
 - [Community](https://tlcstoryworks.github.io/storykobo/community/)
 - [Development updates](https://tlcstoryworks.github.io/storykobo/updates/)
-- [Policies and plain-language guides](https://tlcstoryworks.github.io/storykobo/policies/
+- [Policies and plain-language guides](https://tlcstoryworks.github.io/storykobo/policies/)
 
 These static HTML pages are the public presentation layer. The Markdown files in `docs/` remain the working source documentation. The project is actively developing, so visitor-facing information, plans, features, and policies may change; the Updates page and public repository are the places to follow material changes.
 
