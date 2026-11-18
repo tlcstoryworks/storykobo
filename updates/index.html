@@ -1,1 +1,76 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f5f0e6"><meta name="description" content="Follow the storykōbō project as its vision, design, and implementation develop."><title>Development updates — storykōbō</title><link rel="icon" href="../storykobo-simple.svg" type="image/svg+xml"><link rel="stylesheet" href="../styles.css"></head><body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="shell nav-wrap"><a class="brand" href="../" aria-label="storykōbō home"><img src="../storykobo-wordmark.svg" alt="storykōbō" class="wordmark"></a><nav class="site-nav" aria-label="Main navigation"><a href="../about/">About</a><a href="../vision/">Vision</a><a href="../community/">Community</a><a href="../events/">Events</a><a href="../roadmap/">Roadmap</a><a href="../policies/">Policies</a><a class="nav-shop" href="https://www.bonfire.com/store/storykobo-official-merch/" target="_blank" rel="noopener noreferrer">Merch ↗</a></nav></div></header><div class="notice"><div class="shell"><span class="notice-mark" aria-hidden="true">✳</span> An independent community project in development. <a href="../roadmap/">See what we're building</a>.</div></div><main id="main"><section class="page-hero"><div class="shell"><p class="eyebrow">NOTES FROM THE WORKBENCH</p><h1>The work is happening in the open.</h1><p class="lede">storykōbō is early in development. The public roadmap and repository are the best places to follow what is changing.</p></div></section><section class="content"><div class="shell content-narrow"><h2>What changed in this direction</h2><p>The product vision has become more clearly community-centered. Project pages are community objects with descriptions, updates, discussion, collaborators, and external links — never containers for creative works.</p><p>We've also clarified the role of groups and event teams, the April and November flagship seasons, flexible progress sharing, and a recognition system built around personal awards, event banners, community pennants, and a curated Milestone Gallery.</p><h2>Where things stand</h2><ul><li><strong>Established:</strong> project foundations, repository, documentation, terminology, and initial Laravel application.</li><li><strong>Current focus:</strong> identity, accounts, usernames, and profiles.</li><li><strong>Planned:</strong> community spaces, project pages, conversation, events, recognition, and operations.</li></ul><p><a class="text-link" href="../roadmap/">Read the roadmap →</a></p><p><a class="text-link" href="https://github.com/tlcstoryworks/storykobo" target="_blank" rel="noopener noreferrer">Visit the GitHub repository ↗</a></p></div></section></main><footer class="site-footer"><div class="shell footer-grid"><div class="footer-brand"><img src="../storykobo-simple-white.svg" alt="" class="footer-mark"><div><img src="../storykobo-wordmark-white.svg" alt="storykōbō" class="footer-wordmark"><p>A workshop of worlds. A tlcstoryworks project.</p></div></div><div class="footer-links"><span class="eyebrow">Find your way</span><nav aria-label="Footer navigation"><a href="../about/">About</a><a href="../vision/">Vision</a><a href="../community/">Community</a><a href="../events/">Events</a><a href="../roadmap/">Roadmap</a><a href="../policies/">Policies</a><a href="../updates/">Updates</a><a href="https://github.com/tlcstoryworks/storykobo" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.bonfire.com/store/storykobo-official-merch/" target="_blank" rel="noopener noreferrer">Merch shop ↗</a></nav></div><div class="footer-note"><span class="eyebrow">A small but important promise</span><p>Your creative work stays yours, wherever you choose to keep it. storykōbō is here for the community around it.</p></div></div><div class="shell footer-bottom"><span>Made with care, one piece at a time.</span><span>18+ community · Built for people, not metrics.</span></div></footer></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f0e6">
+  <meta name="description" content="Dated development notes, project news, design decisions, and milestones from the storykōbō workshop.">
+  <title>Project updates — storykōbō</title>
+  <link rel="icon" href="../storykobo-simple.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell nav-wrap">
+      <a class="brand" href="../" aria-label="storykōbō home"><img src="../storykobo-wordmark.svg" alt="storykōbō" class="wordmark"></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../about/">About</a><a href="../vision/">Vision</a><a href="../community/">Community</a><a href="../events/">Events</a><a href="../roadmap/">Roadmap</a><a href="../policies/">Policies</a><a class="nav-shop" href="https://www.bonfire.com/store/storykobo-official-merch/" target="_blank" rel="noopener noreferrer">Merch ↗</a>
+      </nav>
+    </div>
+  </header>
+  <div class="notice"><div class="shell"><span class="notice-mark" aria-hidden="true">✳</span> An independent community project in development. <a href="../roadmap/">See what we're building</a>.</div></div>
+  <main id="main">
+    <section class="page-hero">
+      <div class="shell">
+        <p class="eyebrow">NOTES FROM THE WORKBENCH</p>
+        <h1>The work, as it happens.</h1>
+        <p class="lede">A dated journal of what we're building, what we're learning, and the decisions shaping storykōbō along the way. Some entries mark visible progress; others explain the quieter work that makes a lasting community possible.</p>
+      </div>
+    </section>
+    <section class="content">
+      <div class="shell content-narrow">
+        <div class="updates-intro">
+          <p class="eyebrow">THE PROJECT JOURNAL</p>
+          <h2>Small steps. Thoughtful decisions.</h2>
+          <p>Development notes are arranged newest first. Roadmap plans describe intended direction; these entries record work and decisions as they happen. Dates refer to when each note was published.</p>
+          <p><a class="text-link" href="../roadmap/">Read the development roadmap →</a></p>
+        </div>
+
+        <div class="update-list" aria-label="Project updates">
+          <article class="update-entry" id="building-for-the-long-haul">
+            <header class="update-entry-head">
+              <div class="update-meta">
+                <time class="update-date" datetime="2026-11-17">November 17, 2026</time>
+                <span class="update-category">Development · Project direction</span>
+              </div>
+              <h2>Building for the long haul</h2>
+              <p class="update-summary">Before the next backend phase, we're making maintainability, documentation, accessibility, and sustainability explicit parts of the plan.</p>
+            </header>
+            <div class="update-body">
+              <p>We're taking a planning pause from backend development during November. The project isn't standing still: this is time to look carefully at what it will take to bring storykōbō off the ground and keep it healthy after launch.</p>
+              <p>One priority is the way we write and organize the application. We want clean, readable code; useful comments and documentation close to the systems they describe; clear boundaries between features; and tests that help catch regressions. We also want the application to be understandable by someone returning to it months later—or by another developer who wasn't there when a feature was first built.</p>
+              <p>Future-proofing doesn't mean trying to predict every feature we'll ever want. It means making thoughtful choices now so that individual systems can evolve without forcing a complete rebuild. The presentation should be able to change without taking the application apart, and the platform should be able to improve without losing the familiar character of the community.</p>
+              <p>That standard extends beyond code. Accessibility, privacy, security, moderation, backups, recovery, and routine maintenance need to be considered as part of the work—not postponed until after launch.</p>
+              <p>We'll use this planning period to review launch scope, infrastructure costs, development time, and the learning and maintenance work involved. Backend development will resume with clearer standards and a more realistic picture of the first release.</p>
+              <p class="update-related"><strong>Related:</strong> <a href="../roadmap/">Foundations for the long haul on the roadmap</a>.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="updates-note">
+          <p><strong>Following along?</strong> The <a href="https://github.com/tlcstoryworks/storykobo" target="_blank" rel="noopener noreferrer">GitHub repository</a> shows code changes, while these notes explain the broader project context and decisions.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div class="footer-brand"><img src="../storykobo-simple-white.svg" alt="" class="footer-mark"><div><img src="../storykobo-wordmark-white.svg" alt="storykōbō" class="footer-wordmark"><p>A workshop of worlds. A tlcstoryworks project.</p></div></div>
+      <div class="footer-links"><span class="eyebrow">Find your way</span><nav aria-label="Footer navigation"><a href="../about/">About</a><a href="../vision/">Vision</a><a href="../community/">Community</a><a href="../events/">Events</a><a href="../roadmap/">Roadmap</a><a href="../policies/">Policies</a><a href="../updates/">Updates</a><a href="https://github.com/tlcstoryworks/storykobo" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.bonfire.com/store/storykobo-official-merch/" target="_blank" rel="noopener noreferrer">Merch shop ↗</a></nav></div>
+      <div class="footer-note"><span class="eyebrow">A small but important promise</span><p>Your creative work stays yours, wherever you choose to keep it. storykōbō is here for the community around it.</p></div>
+    </div>
+    <div class="shell footer-bottom"><span>Made with care, one piece at a time.</span><span>18+ community · Built for people, not metrics.</span></div>
+  </footer>
+</body>
+</html>
