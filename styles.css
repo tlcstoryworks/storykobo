@@ -47,3 +47,9 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.12;letter-spa
 /* Quiet buttons on dark moss panels need a light foreground for readable contrast. */
 .section--moss .button--quiet{color:#f9f4e9;border-color:#d5d7cd}
 .section--moss .button--quiet:hover{background:#f9f4e9;color:var(--moss);border-color:#f9f4e9}
+
+/* Keep the official shop easy to find without letting it overpower the main navigation. */
+.site-nav a.nav-shop{padding:.4rem .7rem;border:1px solid #cdbdd0;border-radius:3px;background:var(--lilac);color:var(--plum)}
+.site-nav a.nav-shop:hover{background:var(--plum);border-color:var(--plum);color:#fffdf7}
+.section--merch{background:#f1e1d5;border-block:1px solid #dfc3b0}
+.section--merch .eyebrow{color:var(--plum)}
