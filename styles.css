@@ -43,3 +43,7 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.12;letter-spa
 .footer-inner nav a:hover{color:#f2d6a0;text-decoration:underline}
 .brand-lockup{white-space:nowrap}
 @media(max-width:850px){.content-grid{grid-template-columns:1fr}.sidebar-note{max-width:none}}
+
+/* Quiet buttons on dark moss panels need a light foreground for readable contrast. */
+.section--moss .button--quiet{color:#f9f4e9;border-color:#d5d7cd}
+.section--moss .button--quiet:hover{background:#f9f4e9;color:var(--moss);border-color:#f9f4e9}
