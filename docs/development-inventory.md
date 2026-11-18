@@ -1,9 +1,9 @@
 # Internal Development Inventory
 
 > **Purpose:** Working document for planning implementation, learning, testing, and ongoing maintenance. This is an internal planning artifact, not a public delivery promise.
-> **Last reviewed:** 2026-11-17  
+> **Last reviewed:** 2026-11-17 (initial repository audit)  
 > **Project status:** Backend development is paused for November planning.  
-> **Known stack from project notes:** Laravel 13.35.0 and PHP 8.5.7; verify exact versions against the repository and runtime before relying on them.
+> **Verified dependency constraints:** PHP ^8.3; Laravel Framework v13.35.0 in composer.lock. The actual PHP runtime version remains unverified.
 
 ## How to use this inventory
 
@@ -49,8 +49,8 @@ These apply to every system and are part of implementation, not final cleanup.
 
 These are the limited implementation facts established in project discussions, not a substitute for a fresh code audit.
 - The Laravel application exists and has been used as the backend foundation.
-- Project notes identify Laravel 13.35.0 and PHP 8.5.7; verify against Composer files and the actual runtime.
-- Username validation and uniqueness have been implemented and tested.
+- composer.json requires PHP ^8.3 and Laravel ^13.17; composer.lock resolves Laravel Framework v13.35.0 and PHP platform ^8.3. The machine/runtime PHP patch version has not been inspected.
+- Username normalization, validation, availability checking, database uniqueness, and a tested registration flow are present in the repository. The username column is currently nullable in its migration.
 - Backend development is intentionally paused during November 2026 for planning.
 - The public-facing GitHub Pages site and project documentation exist.
 - The application is not intended to host or distribute members' creative works.
@@ -62,11 +62,11 @@ These are the limited implementation facts established in project discussions, n
 
 | System / work item | Initial status | Dependencies | Experienced-dev effort | Learning / discovery | Notes / acceptance evidence |
 |---|---|---|---:|---:|---|
-| Repository and local setup | Partially implemented — audit | None | 4–12 h | 2–8 h | Repeatable setup from a clean checkout |
+| Repository and local setup | Partially implemented — verified files, runtime still to check | None | 4–12 h | 2–8 h | Laravel skeleton, Composer scripts, Vite build scripts, and SQLite test configuration exist; clean-checkout setup not yet reproduced |
 | Environment configuration and secrets | Needs audit | Hosting choice | 4–10 h | 2–6 h | No secrets committed; documented environment setup |
 | Architecture documentation | Needs audit | Repository audit | 6–16 h | 3–8 h | Explain request flow, boundaries, conventions |
 | Coding standards and review checklist | Planned | Architecture direction | 3–8 h | 1–3 h | Concise standards and review checklist |
-| CI and automated test execution | Needs audit | Test suite, repository config | 6–16 h | 3–8 h | Tests run consistently on changes |
+| CI and automated test execution | Partially implemented — local test suite present; CI needs audit | Test suite, repository config | 6–16 h | 3–8 h | PHPUnit 12.5.38 is locked; feature and unit tests exist; no GitHub Actions workflow was found in the paths/search checked so far |
 | Deployment and rollback | Needs audit | Hosting, configuration | 8–20 h | 4–12 h | Repeatable deployment and rollback instructions |
 | Error logging and monitoring | Needs audit | Hosting | 4–12 h | 2–6 h | Errors can be detected and investigated |
 | Backups and recovery | Needs audit | Database and storage choices | 6–16 h | 3–8 h | Automated backups and tested restore procedure |
@@ -76,9 +76,9 @@ These are the limited implementation facts established in project discussions, n
 
 | System / work item | Initial status | Dependencies | Experienced-dev effort | Learning / discovery | Notes / acceptance evidence |
 |---|---|---|---:|---:|---|
-| Registration and authentication | Needs audit | Platform foundation | 12–28 h | 5–14 h | Secure registration, login, logout |
+| Registration and authentication | Partially implemented — registration only | Platform foundation | 12–28 h remaining | 5–14 h | Guest registration route/controller/form, password hashing, auto-login, session regeneration, and feature tests exist; login/logout routes and flows were not found |
 | Email verification and password recovery | Needs audit | Authentication, mail provider | 8–18 h | 3–9 h | Reliable verification and recovery flows |
-| Permanent member IDs and username rules | Partially implemented — username validation/uniqueness known | Accounts, database | 4–12 h remaining, subject to audit | 2–6 h | Confirm immutable IDs, normalization, reserved names, race-safe uniqueness |
+| Permanent member IDs and username rules | Partially implemented — validation/normalization/availability and unique DB index verified | Accounts, database | 4–12 h remaining, subject to audit | 2–6 h | Default numeric users.id exists; username is 30 chars, normalized to lowercase, validated to [a-z0-9_], checked for availability, and unique-indexed; column is nullable and reserved-name policy is not present in inspected code |
 | Member profiles | Needs audit | Accounts, privacy rules | 12–24 h | 5–12 h | Profile fields, public/private visibility, edit flow |
 | Pronouns and profile preferences | Needs audit | Profiles | 4–10 h | 2–5 h | Optional fields and respectful display |
 | Roles and permissions | Needs audit | Accounts, authorization design | 12–28 h | 5–14 h | Least-privilege roles and tested authorization |
@@ -214,6 +214,45 @@ Do not treat all available development time as feature-building time. Maintenanc
 - Decide whether any member-uploaded images (such as avatars) are supported; if so, define limits, moderation, storage, and privacy implications.
 - Decide how project updates will be published while the public site remains static.
 - Establish realistic weekly/monthly development capacity, including rest and learning time.
+
+## Initial repository audit — 2026-11-17
+
+This is a first-pass inspection of the default branch, not a local execution or production security review. Findings below are tied to files present in the repository at the time of review.
+
+### Confirmed application baseline
+
+- composer.json requires PHP ^8.3 and Laravel Framework ^13.17.
+- composer.lock resolves Laravel Framework v13.35.0 and PHPUnit 12.5.38. It declares the PHP platform constraint ^8.3; this does not establish the exact PHP binary version on a developer or production machine.
+- Frontend build tooling is Vite 8 with Tailwind CSS 4 and the Laravel Vite plugin. package.json defines build and dev scripts.
+- Composer defines setup, dev, and test scripts. The test script clears configuration and runs php artisan test.
+- phpunit.xml configures in-memory SQLite, array cache/session/mail, and synchronous queues for tests.
+- routes/web.php contains the homepage and guest-only GET/POST registration routes. No API route file exists at the checked default-branch path.
+- bootstrap/app.php registers web and console routes plus Laravel's /up health endpoint. No custom middleware is currently registered there.
+
+### Identity and registration findings
+
+- Registration is more than a placeholder: RegisteredUserController validates display name, username, email, and confirmed password; creates a user; hashes the password; logs the new user in; regenerates the session; and redirects to the homepage.
+- The registration Blade view contains labels, HTML validation hints, CSRF protection, and validation-error output. It is currently a bare functional form rather than the branded application interface.
+- User uses Laravel's default numeric primary key, mass-assignment allowlisting, hidden password/remember-token attributes, and a username setter that normalizes to lowercase.
+- Username logic is split into a normalization helper and two validation rules. The accepted format is 1–30 lowercase ASCII letters, digits, or underscores after trimming/lowercasing.
+- A migration adds username as string(30), nullable, and unique. The unique index is database-enforced, but nullable means existing/new rows can still lack a username at schema level. Registration currently requires one. Decide whether nullability is a deliberate transition allowance and, before a broader launch, plan any backfill and non-null constraint safely.
+- Availability validation is a pre-insert query; the unique index remains the final protection against simultaneous claims. Add a test for the database-constraint collision path when the account-claim flow is expanded.
+- Existing tests cover registration page availability, successful registration with normalized username, duplicate username rejection regardless of case, availability, keeping one's own username, and basic normalization/format cases. This is a useful foundation, but it is not yet broad identity/authentication coverage.
+- The inspected routes do not include login, logout, password-reset, email-verification, profile, or account-settings endpoints. The user model does not currently implement Laravel's email-verification contract in the inspected file.
+
+### Database and test inventory
+
+- Four migrations were found: the default users/password-reset/sessions migration, cache migration, jobs migration, and the later username migration.
+- The users migration currently creates id, name, email, email_verified_at, password, remember token, and timestamps. Username is added separately.
+- The cache and jobs tables are standard Laravel foundation tables. No domain tables for profiles, groups, projects, forums, events, teams, achievements, or moderation were found in the migration set.
+- Test files confirmed by repository search include RegistrationTest, UsernameAvailableTest, UsernameTest, and Laravel's ExampleTest.
+- No GitHub Actions workflow was found at the conventional .github/workflows paths checked. Confirm the complete repository tree before treating CI as definitively absent.
+
+### Audit limitations and next verification steps
+
+- Repository files were inspected remotely on the default branch. Composer/npm installs, artisan commands, database migrations, automated tests, and Vite builds were not executed in a local runtime during this audit.
+- The exact PHP CLI version, environment-file hygiene, dependency advisories, full directory inventory, frontend asset state, and any nonstandard CI configuration remain unverified.
+- Next practical verification when development resumes: reproduce setup from a clean checkout; record php -v, php artisan --version, composer show laravel/framework, and npm --version; run php artisan test; inspect migration status; and confirm whether any workflow files or ignored local-only work exist outside the default branch.
 
 ## Next audit session checklist
 
