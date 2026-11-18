@@ -53,3 +53,21 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.12;letter-spa
 .site-nav a.nav-shop:hover{background:var(--plum);border-color:var(--plum);color:#fffdf7}
 .section--merch{background:#f1e1d5;border-block:1px solid #dfc3b0}
 .section--merch .eyebrow{color:var(--plum)}
+
+
+/* Dated project journal: clear metadata, readable entries, and a calm editorial rhythm. */
+.updates-intro{padding-bottom:2rem;border-bottom:1px solid var(--line);margin-bottom:2.5rem}
+.updates-intro h2{font-size:clamp(1.8rem,3.5vw,2.8rem);margin-bottom:.8rem}
+.update-list{display:grid;gap:2rem}
+.update-entry{position:relative;padding:clamp(1.4rem,3vw,2.2rem);background:var(--paper2);border:1px solid var(--line);border-top:3px solid var(--moss);box-shadow:6px 6px 0 #e8dfd1}
+.update-entry-head{margin-bottom:1.6rem;padding-bottom:1.4rem;border-bottom:1px solid var(--line)}
+.update-meta{display:flex;flex-wrap:wrap;align-items:center;gap:.55rem 1rem;margin-bottom:1rem}
+.update-date{font:500 .72rem/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.update-category{display:inline-flex;align-items:center;padding:.22rem .55rem;background:var(--lilac);color:var(--plum);font:500 .66rem/1.5 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.update-entry h2{font-size:clamp(1.9rem,4vw,3rem);margin:0 0 .8rem}
+.update-summary{font-size:1.08rem;line-height:1.6;color:var(--muted);max-width:58ch;margin:0}
+.update-body p{max-width:68ch}
+.update-related{padding-top:1rem;margin-top:1.4rem;border-top:1px solid var(--line);font-size:.92rem}
+.updates-note{margin-top:2.5rem;padding:1.3rem 1.5rem;background:#eee6d8;border-left:4px solid var(--coral)}
+.updates-note p{margin:0}
+@media(max-width:560px){.update-entry{box-shadow:4px 4px 0 #e8dfd1}.update-meta{align-items:flex-start;flex-direction:column;gap:.35rem}}
